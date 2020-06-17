@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<div class="container row">
+    <div class="col s3"></div>
+    <form class="col s6" th:action="@{login-user}" method="post" th:object="${user}">
+        <div class="red" th:text="${param.failMsg}"></div>
+        <input placeholder="Username" required type="text" th:field="*{username}">
+        <input placeholder="Password" required type="password" th:field="*{password}">
+        <button class="waves-effect waves-light btn green">Login</button>
+        <a class="waves-effect waves-light btn green" href="/register">Register</a>
+    </form>
+</div>
+
+</body>
+</html>
